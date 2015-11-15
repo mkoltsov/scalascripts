@@ -10,10 +10,7 @@ import scala.util.{Failure, Success, Try}
 
 
 class defTestParallel extends FreeSpec with Matchers with WebBrowser {
-  val prof = new FirefoxProfile()
-  prof.setPreference("permissions.default.image", 2)
-  prof.setPreference("dom.ipc.plugins.enabled.libflashplayer.so", "false")
-  implicit val webDriver: WebDriver = new FirefoxDriver(prof)
+  implicit val webDriver: WebDriver = new FirefoxDriver()
   val conf = ConfigFactory.load()
   val host = conf.getString("test.baseUrl")
 
